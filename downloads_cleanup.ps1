@@ -1,7 +1,5 @@
 $downloadsFolderPath = "C:\Users\Colby\Downloads"
 
-$files = Get-ChildItem -Path $downloadsFolderPath
-
-foreach ($file in $files) {
-    Remove-Item -Path $file.FullName -Force
+Get-ChildItem -Path $downloadsFolderPath | ForEach-Object {
+    Remove-Item -Path $_.FullName -Force
 }
